@@ -8,3 +8,14 @@ pamatyti jo pateikto svorio konvertavimą į:
 Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
+document.getElementById("submit-btn").addEventListener("click", convert);
+
+function convert(event) {
+  event.preventDefault();
+  let imputValue = document.getElementById("search").value;
+  const lbConv = Number(imputValue) * 2.2046;
+  const gConv = Number(imputValue) / 0.001;
+  const ozConv = Number(imputValue) * 35.274;
+  const returnCalcValues = `Rezultatas: <br> Svarai (lb) - ${lbConv} <br> Gramai (g) - ${gConv} <br> Uncijos (oz) - ${ozConv}`;
+  document.getElementById("output").innerHTML = returnCalcValues;
+}
